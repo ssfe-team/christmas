@@ -76,9 +76,9 @@ require(['jquery', 'b', 'wxjsapi'], function($, b, wx) {
     });
     // 2.2 监听“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
     wx.onMenuShareAppMessage({
-      title: '她不在你的城市，在你的心里吗？',
-      desc: '她的世界很小，只装满了你。你的世界很大，却常忽略了她',
-      link: 'https://www.chuangkit.com/mod/activity/motherday/index.html',
+      title: '圣诞节即使没有喧闹，也要有点微笑',
+      desc: '圣诞节交换回忆，即使没有朋友喧闹，也该自己有一点微笑',
+      link: window.location.origin + '/mod/activity/christmas/index.html',
       imgUrl: 'https://imgpub.chuangkit.com/barrageImg/share.jpg@100w',
       trigger: function (res) {
         //不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
@@ -99,8 +99,8 @@ require(['jquery', 'b', 'wxjsapi'], function($, b, wx) {
     // 2.2 监听“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
 
     wx.onMenuShareTimeline({
-      title: '她不在你的城市，在你的心里吗？',
-      link: 'https://www.chuangkit.com/mod/activity/motherday/index.html',
+      title: '圣诞节即使没有喧闹，也要有点微笑',
+      link: window.location.origin + '/mod/activity/christmas/index.html',
       imgUrl: 'https://imgpub.chuangkit.com/barrageImg/share.jpg@100w',
       trigger: function (res) {
         // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
@@ -121,20 +121,20 @@ require(['jquery', 'b', 'wxjsapi'], function($, b, wx) {
   wx.error(function (res) {
     // alert(res.errMsg);
   });
-
+//
     $(document).ready(function() {
         // 绑定页面的resize事件以在变化时更新html的font-size
         $(window).resize(setFontSize);
-        checkLogin(); // 获取用户登录信息
+        // checkLogin(); // 获取用户登录信息
       setTimeout(function () {
         $(".line-1").animate({
-          top:'.5rem',
+          top:'.8rem',
           opacity: '1'
         },"slow");
       },300);
       setTimeout(function () {
         $(".line-2").animate({
-          top:'.9rem',
+          top:'1.1rem',
           opacity: '1'
         },"slow");
       },600);
@@ -144,24 +144,6 @@ require(['jquery', 'b', 'wxjsapi'], function($, b, wx) {
           opacity: '1'
         },"slow");
       },900);
-      setTimeout(function () {
-        $(".line-4").animate({
-          top:'1.8rem',
-          opacity: '1'
-        },"slow");
-      },1200);
-      setTimeout(function () {
-        $(".slide-left").animate({
-          // top:'2.8rem',
-          opacity: '1'
-        },"slow");
-      },2000);
-      setTimeout(function () {
-        $(".footer").animate({
-          // bottom:'.2rem',
-          opacity: '1'
-        },"slow");
-      },2000);
     });
     document.addEventListener('touchstart', touch, false);
     document.addEventListener('touchmove', touch, false);
@@ -181,11 +163,11 @@ require(['jquery', 'b', 'wxjsapi'], function($, b, wx) {
                 break;
         }
     }
-    // 设置html的font-size
+//     // 设置html的font-size
     function setFontSize() {
         document.getElementsByTagName('html')[0].style.fontSize = (window.innerWidth / 375) * 100 + 'px';
     }
-    // 获取用户登录信息
+//     // 获取用户登录信息
     function checkLogin() {
         $.ajax({
             url: "/user/getUserInfo.do",

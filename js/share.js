@@ -76,9 +76,9 @@ require(['jquery', 'b', 'wxjsapi', 'barrager'], function($, b, wx,barrager) {
     });
     // 2.2 监听“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
       wx.onMenuShareAppMessage({
-        title: '她不在你的城市，在你的心里吗？',
-        desc: '她的世界很小，只装满了你。你的世界很大，却常忽略了她',
-        link: 'https://www.chuangkit.com/mod/activity/motherday/index.html',
+        title: '圣诞节即使没有喧闹，也要有点微笑',
+        desc: '圣诞节交换回忆，即使没有朋友喧闹，也该自己有一点微笑',
+        link: window.location.origin + '/mod/activity/christmas/index.html',
         imgUrl: 'https://imgpub.chuangkit.com/barrageImg/share.jpg@100w',
         trigger: function (res) {
            //不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
@@ -99,8 +99,8 @@ require(['jquery', 'b', 'wxjsapi', 'barrager'], function($, b, wx,barrager) {
     // 2.2 监听“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
       
       wx.onMenuShareTimeline({
-        title: '她不在你的城市，在你的心里吗？',
-        link: 'https://www.chuangkit.com/mod/activity/motherday/index.html',
+        title: '圣诞节即使没有喧闹，也要有点微笑',
+        link: window.location.origin + '/mod/activity/christmas/index.html',
         imgUrl: 'https://imgpub.chuangkit.com/barrageImg/share.jpg@100w',
         trigger: function (res) {
           // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
@@ -155,17 +155,4 @@ require(['jquery', 'b', 'wxjsapi', 'barrager'], function($, b, wx,barrager) {
   $(".modal").click(function () {
     $(".modal").css("display","none");
   });
-  $(".gift-button").click(function () {
-    $("#myvideo").css("display","block");
-    window.a = 1;
-    document.getElementById("myvideo").play();
-  });
-  $("#myvideo").click(function () {
-    $("#myvideo").css("display","none");
-    document.getElementById("myvideo").pause();
-  });
-
-  $('#myvideo')[0].onpause = function() {
-    $("#myvideo").css("display","none");
-  }
 });
