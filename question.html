@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="full-screen" content="yes">
+    <title>请认真爱她</title>
+    <link rel="stylesheet" type="text/css" href="css/question.css">
+    <link rel="stylesheet" type="text/css" href="/libs/jquery/barrager/barrager.css">
+</head>
+
+<body>
+
+    <div class="question-wrap">
+      <div class="background-wrap">
+      </div>
+        <div class="mask" id="mask"></div>
+        <div class="answer-wrap">
+            <input id="answerInput" type="text" name="" placeholder="把你的答案写到这里吧~" maxlength="20" />
+            <div class="send-btn">发送</div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="answer-btn"></div>
+    </div>
+
+    <audio id="bgm" src="https://pub.cdn.oss.chuangkit.com/sys/bgm.mp3" loop preload="auto" autoplay oncanplay="wocao()">你的浏览器不支持audio标签。</audio>
+    <div id="bgmbtn" class="bgmbtn bgmbtnyes"></div>
+
+    <script type="text/javascript" src="/libs/requirejs/require.js"></script>
+    <!-- <script type="text/javascript" src="/comp/config/global_config.js"></script> -->
+    <!-- <script type="text/javascript" src="libs/jquery-1.12.4.min.js"></script> -->
+    <!-- <script type="text/javascript" src="libs/jquery.barrager.js"></script> -->
+    <script type="text/javascript" src="js/question.js"></script>
+    <script type='text/javascript'>
+  var _vds = _vds || [];
+  window._vds = _vds;
+  (function(){
+    _vds.push(['setAccountId', '8c9191eb6b6b4d07']);
+
+    (function() {
+      var vds = document.createElement('script');
+      vds.type='text/javascript';
+      vds.async = true;
+      vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(vds, s);
+    })();
+  })();
+</script>
+</body>
+
+</html>

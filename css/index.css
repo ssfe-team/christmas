@@ -1,0 +1,68 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background-image: url("../imgs/index_bg.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.foreword-top {
+  position: relative;
+  top: 0;
+}
+.foreword {
+  position: absolute;
+  left: .2rem;
+  opacity: 0;
+}
+.line-1 {
+  top: 1rem;
+  height: .5rem;
+  width: 50%;
+  background-image: url("../imgs/herworld.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.line-2 {
+  top: 1.4rem;
+  height: .5rem;
+  width: 50%;
+  background-image: url("../imgs/onlyyou.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.line-3 {
+  top: 1.9rem;
+  height: .5rem;
+  width: 50%;
+  background-image: url("../imgs/yourworld.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.line-4 {
+  top: 2.3rem;
+  height: .5rem;
+  width: 50%;
+  background-image: url("../imgs/ignoreher.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.slide-left {
+  top: 2.8rem;
+  height: .5rem;
+  width: 50%;
+  background-image: url("../imgs/slide_left.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.footer {
+  bottom: .2rem;
+  height: .2rem;
+  width: 50%;
+  background-image: url("../imgs/madebychuangkit.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
