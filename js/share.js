@@ -46,7 +46,7 @@ require(['jquery', 'b', 'wxjsapi', 'barrager'], function($, b, wx,barrager) {
     ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
   };
   $.ajax({
-    url: "/login/getWxDyhJsApiConfig.do",
+    url: "/login/getWxFwhJsApiConfig.do",
     dataType: "json",
     type: "GET",
     success: function(data) {
