@@ -74,10 +74,10 @@ require(['jquery', 'b', 'wxjsapi'], function($, b, wx) {
         // 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
       }
     });
-    // 2.2 监听“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
+    // 2.2 监听“分享给朋友”按钮点击、自定义分享内容及分享结果接口
     wx.onMenuShareAppMessage({
-      title: '圣诞节即使没有喧闹，也要有点微笑',
-      desc: '圣诞节交换回忆，即使没有朋友喧闹，也该自己有一点微笑',
+      title: '别把圣诞节过成礼拜一',
+      desc: '即使没有朋友喧闹，也该给自己一点微笑',
       link: window.location.origin + '/mod/activity/christmas/index.html',
       imgUrl: 'https://imgpub.chuangkit.com/barrageImg/share.jpg@100w',
       trigger: function (res) {
