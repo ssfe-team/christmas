@@ -141,14 +141,14 @@ a {
   background-position: center;
 }
 .background-wrap {
-  width: 800%;
+  width: 1200%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
 }
 .background-wrap div {
-  width: 12.5%;
+  width: 9%;
   height: 100%;
   float: left;
   background-size: cover;
@@ -273,6 +273,17 @@ a {
   right: .1rem;
   background-size: 100%;
   cursor: pointer;
+  -webkit-animation: rotate 4s linear infinite;
+  animation: rotate 4s linear infinite;
+}
+@-webkit-keyframes rotate {
+  0%,
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 .bgmbtnyes {
   background-image: url(../imgs/bgmbtnyes.svg);
