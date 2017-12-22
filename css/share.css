@@ -47,7 +47,8 @@ p {
 }
 .buttons {
   position: absolute;
-  left: 23vw;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: 26vh;
 }
 .buttons #share-button {
