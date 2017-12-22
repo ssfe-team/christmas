@@ -110,7 +110,7 @@ require(['jquery', 'b', 'wxjsapi'], function($, b, wx) {
         title: '别把圣诞节过成礼拜一',
         desc: '即使没有朋友喧闹，也该给自己一点微笑',
         link: window.location.origin + '/mod/activity/christmas/index.html',
-        imgUrl: 'https://imgpub.chuangkit.com/barrageImg/share.jpg@100w',
+        imgUrl: 'https://imgpub.chuangkit.com/barrageImg/share_1.jpg@100w',
         trigger: function (res) {
           //不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
           //alert('用户点击发送给朋友');
@@ -132,7 +132,7 @@ require(['jquery', 'b', 'wxjsapi'], function($, b, wx) {
       wx.onMenuShareTimeline({
         title: '圣诞节即使没有喧闹，也要有点微笑',
         link: window.location.origin + '/mod/activity/christmas/index.html',
-        imgUrl: 'https://imgpub.chuangkit.com/barrageImg/share.jpg@100w',
+        imgUrl: 'https://imgpub.chuangkit.com/barrageImg/share_1.jpg@100w',
         trigger: function (res) {
           // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
           //alert('用户点击分享到朋友圈');

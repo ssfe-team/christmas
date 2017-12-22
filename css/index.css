@@ -45,6 +45,22 @@ body {
   -webkit-animation: rotate 4s linear infinite;
   animation: rotate 4s linear infinite;
 }
+.slide-tip {
+  position: absolute;
+  top: 54vh;
+  right: 4vw;
+  width: 8vw;
+  -webkit-animation: scaleTip 2s linear infinite alternate;
+  animation: scaleTip 2s linear infinite alternate;
+}
+@-webkit-keyframes scaleTip {
+  0% {
+    -webkit-transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+  }
+}
 .share-text {
   position: relative;
   width: 30vw;
