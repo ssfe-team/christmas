@@ -152,26 +152,8 @@ require(['jquery', 'b', 'barrager','wxjsapi'], function($, b, barrager, wx) {
     wx.error(function (res) {
       // alert(res.errMsg);
     });
+    checkLogin(); // 获取用户登录信息
 
-    // 获取用户登录信息
-    $.ajax({
-      url: "/user/getUserInfo.do",
-      dataType: "json",
-      type: "GET",
-      success: function(data) {
-        if (data.LoginTimeOut) {
-          // 用户未登录
-          // window.location.href = 'index.html';
-        } else {
-          window.userInfo = data.userInfo;
-        }
-      },
-      error: function(data) {
-        // window.location.href = 'index.html';
-        console.log('获取用户登录信息error!');
-      }
-
-    });
   }
 
     var bgm = document.getElementById('bgm');
@@ -435,6 +417,41 @@ require(['jquery', 'b', 'barrager','wxjsapi'], function($, b, barrager, wx) {
         });
 
     }
+  // 获取用户登录信息
+  function checkLogin() {
+    $.ajax({
+      url: "/user/getUserInfo.do",
+      dataType: "json",
+      type: "GET",
+      success: function(data) {
+        if (data.LoginTimeOut) {
+          // 用户未登录
+          applyWechatLogin();
+        }
+      },
+      error: function() {
+        console.log("网络错误！");
+      }
+    });
+  }
+  // 获取微信上自动注册创客贴账号的链接
+  function applyWechatLogin() {
+    $.ajax({
+      url: "/login/webWxFWHLogin.do",
+      dataType: "json",
+      type: "POST",
+      data: {
+        redirect_url: window.location.href
+      },
+      success: function(data) {
+        if (data.code == 1) {
+          window.location.href = data.url;
+        } else {
+          console.log("出错啦!")
+        }
+      }
+    });
+  }
 
     document.addEventListener('touchstart', touch, false);
     document.addEventListener('touchmove', touch, false);
