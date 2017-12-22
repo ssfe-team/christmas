@@ -1,5 +1,9 @@
 require(['jquery', 'b', 'wxjsapi'], function($, b, wx) {
 
+  var indexType = b.getQueryString('indexType');
+
+  window.indexType = indexType;
+
   var isWx = false;
   //判断访问终端
   var browser = {
@@ -191,7 +195,7 @@ require(['jquery', 'b', 'wxjsapi'], function($, b, wx) {
                 break;
             case "touchend":
                 if ((window.touchX - event.changedTouches[0].clientX) > 30) {
-                    window.location.href = 'question.html';
+                    window.location.href = 'question.html?indexType=' + window.indexType;
                 }
                 break;
         }

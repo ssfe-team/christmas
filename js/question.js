@@ -1,4 +1,17 @@
 require(['jquery', 'b', 'barrager','wxjsapi'], function($, b, barrager, wx) {
+
+  var indexType = b.getQueryString('indexType');
+
+  window.indexType = indexType;
+
+  var indexarr;
+  for(var i = 0;i < 12;i++) {
+    indexarr.push[i];
+  }
+
+  indexarr.splice(indexType - 1, 1);
+  indexarr.unshift(indexType - 1);
+
   var isWx = false;
   //判断访问终端
   var browser = {
@@ -109,7 +122,7 @@ require(['jquery', 'b', 'barrager','wxjsapi'], function($, b, barrager, wx) {
       wx.onMenuShareAppMessage({
         title: '别把圣诞节过成礼拜一',
         desc: '即使没有朋友喧闹，也该给自己一点微笑',
-        link: window.location.origin + '/mod/activity/christmas/index.html',
+        link: window.location.origin + '/mod/activity/christmas/index.html?indexType=' + indexType,
         imgUrl: 'https://imgpub.chuangkit.com/barrageImg/share_1.jpg@100w',
         trigger: function (res) {
           //不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
@@ -131,7 +144,7 @@ require(['jquery', 'b', 'barrager','wxjsapi'], function($, b, barrager, wx) {
 
       wx.onMenuShareTimeline({
         title: '圣诞节即使没有喧闹，也要有点微笑',
-        link: window.location.origin + '/mod/activity/christmas/index.html',
+        link: window.location.origin + '/mod/activity/christmas/index.html?indexType=' + indexType,
         imgUrl: 'https://imgpub.chuangkit.com/barrageImg/share_1.jpg@100w',
         trigger: function (res) {
           // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
@@ -184,7 +197,6 @@ require(['jquery', 'b', 'barrager','wxjsapi'], function($, b, barrager, wx) {
     alert('asdasd');
     bgm.play();
   });*/
-
 
     window.questionIndex = 0;
 
@@ -246,11 +258,11 @@ require(['jquery', 'b', 'barrager','wxjsapi'], function($, b, barrager, wx) {
                     getBarrage();
                     var $img,
                         $body = $('body');
-                    for (var i = 0; i < window.questionList.length; i++) {
-                        $img = $('<img src="' + window.questionList[i].imgUrl + '" class="hide" />');
+                    for (var i = 0; i < indexarr.length; i++) {
+                        $img = $('<img src="' + window.questionList[indexarr[i]].imgUrl + '" class="hide" />');
                         $body.append($img);
                         var div = $('<div></div>');
-                        div.css('background-image', 'url(' + window.questionList[i].imgUrl + ')')
+                        div.css('background-image', 'url(' + window.questionList[indexarr[i]].imgUrl + ')')
                         $('.background-wrap').append(div);
                     }
 
@@ -276,7 +288,7 @@ require(['jquery', 'b', 'barrager','wxjsapi'], function($, b, barrager, wx) {
             type: "POST",
             dataType: "json",
             data: {
-                qid: window.questionList[window.questionIndex].id
+                qid: window.questionList[indexarr[window.questionIndex]].id
             },
             success: function(data) {
                 // 操作的错误码(-1参数错误;-2未登录;-3暂无用户答题记录)
@@ -482,7 +494,7 @@ require(['jquery', 'b', 'barrager','wxjsapi'], function($, b, barrager, wx) {
                         clearTimeout(window.showBarrageClock);
                         getBarrage();
                     } else {
-                        window.location.href = 'share.html';
+                        window.location.href = 'share.html?indexType=' + indexType;
                     }
                 } else if ((event.changedTouches[0].clientX - window.touchX) > 22) {
                     hideBarrage();
