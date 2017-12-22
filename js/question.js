@@ -427,6 +427,8 @@ require(['jquery', 'b', 'barrager','wxjsapi'], function($, b, barrager, wx) {
         if (data.LoginTimeOut) {
           // 用户未登录
           applyWechatLogin();
+        } else {
+          window.userInfo = data.userInfo;
         }
       },
       error: function() {
