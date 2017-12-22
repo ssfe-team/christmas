@@ -4,7 +4,7 @@ require(['jquery', 'b', 'barrager','wxjsapi'], function($, b, barrager, wx) {
 
   window.indexType = indexType;
 
-  var indexarr;
+  var indexarr = [];
   for(var i = 0;i < 12;i++) {
     indexarr.push[i];
   }
